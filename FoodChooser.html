@@ -1,0 +1,78 @@
+<html>
+<head>
+ <script>
+function ageCheck()
+{
+  var year = document.getElementById("age").value;
+  year = parseInt(year);
+  var age = 2021-year;
+  if(age >= 200)
+  {
+    alert("ERROR");
+  }
+  if(age <= 0)
+  {
+    alert("ERROR");
+  }
+  if(age >= 10)
+  {
+    document.getElementById('pic1').innerHTML = "<hr> <br> <img src = 'pasta.jpg' height = '250px' width = '250px' onclick = 'printYES()'><hr>";
+    document.getElementById('pic2').innerHTML = "<hr> <br> <img src = 'salad.jpg' height = '250px' width = '250px' onclick = 'printYES()'><hr>";
+    document.getElementById('pic3').innerHTML = "<hr> <br> <img src = 'icecream.jpg' height = '250px' width = '250px' onclick = 'printNO()'><hr>";
+  }
+  if(age <= 10)
+  {
+    document.getElementById('pic1').innerHTML = "<hr> <br> <img src = 'fruit.jpg' height = '250px' width = '250px' onclick = 'printYES()'><hr>";
+    document.getElementById('pic2').innerHTML = "<hr> <br> <img src = 'mac.jpg'  height = '250px' width = '250px'onclick = 'printNO()'><hr>";
+    document.getElementById('pic3').innerHTML = "<hr> <br> <img src = 'ddino.jpg' height = '250px' width = '250px' onclick = 'printNO()'><hr>";
+  }
+}
+function printYES()
+{
+document.getElementById('message').innerHTML = "<hr> This is a healthy choice! <br> <hr>";
+}
+function printNO()
+{
+document.getElementById('message').innerHTML = "<hr> This is NOT a healthy choice! <br> <hr>";
+}
+ </script>
+ <style>
+ #message{
+  font-family: fantasy;
+  font-size: 25px;
+ }
+ #H1 {
+   font-family: fantasy;
+   font-size: 40px;
+  }
+  #P1 {
+    font-family: fantasy;
+    font-size: 20px;
+  }
+  body{
+    background-color: #cce0ff;
+    border-style: dashed;
+  }
+ }
+ </style>
+  </head>
+
+
+
+
+  <body>
+    <h1 id = "H1"> Welcome to the food Chooser! </h1>
+    <p id= "p1"> Tell me your age and I will tell you if the foods you like are healthy. </p>
+      <input type = "text" value = "ENTER BIRTH YEAR" id = "age">
+        <input type = "button" value = "Submit" id = "sbutton" onclick = "ageCheck()">
+    <table>
+      <tr>
+        <td id= "pic1"> </td>
+        <td id= "pic2" > </td>
+        <td id= "pic3"> </td>
+      </tr>
+    </table>
+
+       <p id = "message"></p>
+    </body>
+</html>
